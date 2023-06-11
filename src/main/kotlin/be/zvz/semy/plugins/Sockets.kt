@@ -2,7 +2,7 @@ package be.zvz.semy.plugins
 
 import be.zvz.clova.Language
 import be.zvz.clova.LanguageSetting
-import be.zvz.semy.dto.LLaMAResponse
+import be.zvz.semy.dto.UserInputResponse
 import be.zvz.semy.dto.UserInput
 import be.zvz.semy.utils.ClovaManager
 import be.zvz.semy.utils.JacksonManager
@@ -34,11 +34,13 @@ fun Application.configureSockets() {
                     )
 
                     data = buildString {
+                        println(ocrResult)
                         ocrResult.ocrs?.forEach {
                             append(it.text)
                             append(" ")
                         }
                     }
+                    println(data)
                 } else if (frame is Frame.Text) {
                     data = try {
                         JacksonManager.jacksonObjectMapper.readValue<UserInput>(frame.readText()).text
@@ -52,8 +54,8 @@ fun Application.configureSockets() {
                 outgoing.send(
                     Frame.Text(
                         JacksonManager.jacksonObjectMapper.writeValueAsString(
-                            LLaMAResponse(
-                                inferenceResult,
+                            UserInputResponse(
+                                inferenceResult.response,
                             ),
                         ),
                     ),
