@@ -1,4 +1,4 @@
-package be.zvz.plugins
+package be.zvz.semy.plugins
 
 import io.ktor.server.application.*
 import io.ktor.server.plugins.compression.*

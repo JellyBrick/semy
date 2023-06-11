@@ -1,4 +1,4 @@
-package be.zvz.dto
+package be.zvz.semy.dto
 
 data class LLaMAPrompt(
     val prompt: String,

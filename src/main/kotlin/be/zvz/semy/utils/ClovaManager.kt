@@ -1,4 +1,4 @@
-package be.zvz.utils
+package be.zvz.semy.utils
 
 import be.zvz.clova.Clova
 

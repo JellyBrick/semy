@@ -1,6 +1,6 @@
-package be.zvz.utils
+package be.zvz.semy.utils
 
-import be.zvz.dto.LLaMAPrompt
+import be.zvz.semy.dto.LLaMAPrompt
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request

@@ -1,11 +1,10 @@
-package be.zvz
+package be.zvz.semy
 
 import io.ktor.client.request.*
-import io.ktor.client.statement.*
 import io.ktor.server.testing.*
 import kotlin.test.*
-import io.ktor.http.*
-import be.zvz.plugins.*
+import be.zvz.semy.plugins.configureHTTP
+import be.zvz.semy.plugins.configureSockets
 
 class ApplicationTest {
     @Test
